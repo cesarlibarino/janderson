@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Janderson Pinheiro | Consultoria Nutricional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+          colors: {
+            janderson: {
+              bg: '#0b131a',
+              card: '#111c24',
+              brand: '#10b981', /* Verde Esmeralda Premium */
+              brandHover: '#059669'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-janderson-bg text-white font-sans antialiased selection:bg-janderson-brand selection:text-white">
+
+  <header class="fixed top-0 w-full z-50 bg-janderson-bg/90 backdrop-blur-md border-b border-gray-800/60">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 h-24 flex items-center justify-between">
+      <div class="text-xl sm:text-2xl font-extrabold uppercase tracking-tight">
+        Janderson Pinheiro <span class="text-janderson-brand text-xs sm:text-sm block font-semibold tracking-wider normal-case">Consultoria Nutricional Avançada</span>
+      </div>
+      <a href="https://api.whatsapp.com/send/?phone=5584986018903&text=Ol%C3%A1%20Janderson!%20Quero%20destravar%20meu%20shape%20com%20a%20sua%20Consultoria%20Nutricional." target="_blank" class="bg-janderson-brand hover:bg-janderson-brandHover text-white text-xs sm:text-sm font-bold uppercase px-6 py-3 rounded transition-all duration-300 transform hover:scale-105 active:scale-95">
+        Vagas Limitadas
+      </a>
+    </div>
+  </header>
+
+  <section class="pt-48 pb-24 px-6 max-w-6xl mx-auto text-center min-h-[95vh] flex flex-col justify-center items-center">
+    <div class="reveal active w-full max-w-4xl">
+      <span class="inline-block bg-janderson-brand/10 text-janderson-brand border border-janderson-brand/20 text-xs sm:text-sm font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-8 animate-pulse">
+        Destrave sua Definição Muscular
+      </span>
+      
+      <h1 class="text-4xl sm:text-7xl font-extrabold uppercase tracking-tighter leading-tight sm:leading-none mb-8">
+        Seu shape já está aí. Só está <span class="text-janderson-brand block sm:inline">escondido embaixo da gordura.</span>
+      </h1>
+      
+      <p class="text-gray-400 text-lg sm:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+        Chega de fazer dietas restritivas que destroem a sua massa muscular. Descubra a estratégia nutricional certa para <strong class="text-gray-200 font-semibold">eliminar a capa de gordura</strong> e revelar a definição que o seu treino já construiu.
+      </p>
+      
+      <div class="mb-16">
+        <a href="https://api.whatsapp.com/send/?phone=5584986018903&text=Ol%C3%A1%20Janderson!%20Quero%20destravar%20meu%20shape%20com%20a%20sua%20Consultoria%20Nutricional." target="_blank" class="inline-flex items-center gap-4 bg-janderson-brand hover:bg-janderson-brandHover text-white font-bold uppercase text-sm sm:text-base tracking-widest px-10 py-5 rounded-md shadow-2xl shadow-janderson-brand/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-janderson-brand/40">
+          <i data-lucide="apple" class="w-6 h-6"></i> Destravar Meu Shape Agora
+        </a>
+      </div>
+
+      <div class="relative inline-block">
+        <div class="absolute inset-0 bg-janderson-brand/10 rounded-full blur-2xl pointer-events-none"></div>
+        <img 
+          src="janderson-pinheiro.webp" 
+          alt="Janderson Pinheiro - Nutricionista" 
+          class="relative mx-auto w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-janderson-brand/30 shadow-2xl shadow-janderson-brand/20 transition-transform duration-500 hover:scale-105"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    lucide.createIcons();
+    
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { 
+        if(e.isIntersecting) { 
+          e.target.classList.add('active'); 
+          observer.unobserve(e.target); 
+        } 
+      });
+    }, { threshold: 0.05 });
+    
+    reveals.forEach(r => observer.observe(r));
+  </script>
+</body>
+</html>
